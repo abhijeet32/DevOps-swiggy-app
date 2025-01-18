@@ -1,12 +1,22 @@
 version: 0.0
 os: linux
 
+files:
+  - source: /
+    destination: /home/ec2-user/app
+
 hooks:
-  ApplicationStop:
-    - location: Scripts/stop_container.sh
+  BeforeInstall:
+    - location: scripts/install_docker.sh
       timeout: 300
       runas: root
-  AfterInstall:
-    - location: Scripts/start_container.sh
+
+  ApplicationStart:
+    - location: scripts/start_docker_container.sh
+      timeout: 300
+      runas: root
+
+  ValidateService:
+    - location: scripts/validate_service.sh
       timeout: 300
       runas: root
