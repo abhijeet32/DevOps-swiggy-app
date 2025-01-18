@@ -6,11 +6,6 @@ files:
     destination: /home/ec2-user/app
 
 hooks:
-  BeforeInstall:
-    - location: scripts/install_docker.sh
-      timeout: 300
-      runas: root
-
   ApplicationStart:
     - location: scripts/start_docker_container.sh
       timeout: 300
