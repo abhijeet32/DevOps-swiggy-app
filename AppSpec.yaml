@@ -1,10 +1,6 @@
 version: 0.0
 os: linux
 
-files:
-  - source: /
-    destination: /home/ec2-user/app
-
 hooks:
   ApplicationStart:
     - location: scripts/start_docker_container.sh
