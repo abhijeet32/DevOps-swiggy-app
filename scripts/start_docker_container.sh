@@ -1,6 +1,4 @@
 #!/bin/bash
-IMAGE_NAME="abhi0874/swiggy-clone-app:latest"
-CONTAINER_NAME="nodejs-app"
 
 # Pull the latest Docker image
 docker pull $IMAGE_NAME
